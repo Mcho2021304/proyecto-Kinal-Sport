@@ -3,7 +3,7 @@
 import mongoose from "mongoose";
 const teamSchema = new mongoose.Schema({
     teamName: {
-        type: String,   
+        type: String,
         required: [true, 'El nombre del equipo es requerido'],
         trim: true,
         maxLength: [100, 'El nombre del equipo no puede tener mas de 100 caracteres'],
@@ -16,6 +16,7 @@ const teamSchema = new mongoose.Schema({
     },
     players: [{
         type: String,
+        required: [true, 'El nombre del jugador es requerido'],
         trim: true,
         maxLength: [100, 'El nombre del jugador no puede tener mas de 100 caracteres'],
     }],
