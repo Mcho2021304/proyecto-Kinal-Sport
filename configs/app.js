@@ -5,9 +5,10 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import { corsOptions } from './cors-configuration.js';
+import {dbConnection} from './db.js';
 
 // Rutas
-import fieldRoutes from '../src/fields/field.routes.js';
+import fieldRoutes from '../src/fields/field-routes.js';
 
 const BASE_URL = '/kinalSportAdmin/v1';
 
@@ -32,6 +33,7 @@ const initServer = async (app) => {
     const PORT = process.env.PORT || 3001;
     try{
         //Configuración de los middlewares (Mi Aplicación)
+        dbConnection();
         middlewares(app);
         routes(app);
 

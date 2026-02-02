@@ -1,7 +1,6 @@
 'use strict';
 
 import mongoose, { mongo } from "mongoose";
-import { kMaxLength } from "node:buffer";
 
 const fieldSchema = new mongoose.Schema({
     fieldName: {
@@ -14,7 +13,7 @@ const fieldSchema = new mongoose.Schema({
     fieldType: {
         type: String,
         required: [true, 'El tipo de campo es requerido'],
-        //enume: valores permitidos
+        //enum: valores permitidos
         enum: {
             values: ['NATURAL', 'SINTETICA', 'CONCRETO'],
             message: 'Tipo de superficie no valida',
